@@ -6,9 +6,34 @@ function generatePassword(){
   const specialChars = "!@#$%^&*()_-+=<>?";
 
   let charset = "";
-  let password = "";}
+  let password = "";
 
- 
+  // Prompt
+  let passwordLength;
+  while (true) {
+      passwordLength = parseInt(prompt("Enter the desired password length (8 to 128 characters):"));
+      if (!isNaN(passwordLength) && passwordLength >= 8 && passwordLength <= 128) {
+          break;
+      }
+      alert("Please enter a valid password length between 8 and 128 characters.");
+  }
+  while (true) {
+      const includeLowercase = confirm("Include lowercase characters?");
+      const includeUppercase = confirm("Include uppercase characters?");
+      const includeNumeric = confirm("Include numeric characters?");
+      const includeSpecial = confirm("Include special characters?");
+
+      if (includeLowercase || includeUppercase || includeNumeric || includeSpecial) {
+          if (includeLowercase) charset += lowercaseChars;
+          if (includeUppercase) charset += uppercaseChars;
+          if (includeNumeric) charset += numericChars;
+          if (includeSpecial) charset += specialChars;
+          break;
+      } else {
+          alert("Please select at least one character type.");
+      }
+  }
+}
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
