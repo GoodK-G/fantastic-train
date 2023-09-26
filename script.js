@@ -1,5 +1,14 @@
 // Assignment code here
+function generatePassword(){ 
+  const lowercaseChars = "abcdefghijklmnopqrstuvwxyz";
+  const uppercaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  const numericChars = "0123456789";
+  const specialChars = "!@#$%^&*()_-+=<>?";
 
+  let charset = "";
+  let password = "";}
+
+ 
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
