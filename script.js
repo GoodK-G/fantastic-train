@@ -33,6 +33,14 @@ function generatePassword(){
           alert("Please select at least one character type.");
       }
   }
+
+  // Generate the password
+  for (let i = 0; i < passwordLength; i++) {
+      const randomIndex = Math.floor(Math.random() * charset.length);
+      password += charset[randomIndex];
+  }
+
+  return password;
 }
 
 // Get references to the #generate element
